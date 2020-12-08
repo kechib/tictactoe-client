@@ -9,11 +9,13 @@ const onSignUp = function (event) {
   const data = getFormFields(form)
 api.signUp(data)
 .then(ui.onSignUpSuccess)
-.catch(ui.onsignUpFailure)
+.catch(ui.onSignUpFailure)
 }
 
 
 
 
 
-module.exports = {}
+module.exports = {
+  onSignUp
+}
