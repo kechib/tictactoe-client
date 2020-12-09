@@ -8,7 +8,10 @@ const userEvents = require('./user/events')
 
 $(() => {
   // your JS code goes here
-  $('.authenticated').hide()
   $('.unauthenticated').show()
   $('#sign-up').on('submit', userEvents.onSignUp)
+  $('#sign-in').on('submit', userEvents.onSignIn)
+  $('.authenticated').show()
+  $('#change-password').on('submit', userEvents.onChangePassword)
+  $('#sign-out').on('click', userEvents.onSignOut)
 })

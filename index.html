@@ -14,23 +14,86 @@
     <body>
       <h1>Welcome To Tic Tac Toe</h1>
       <p id="message"></p>
+      <div class="unauthenticated">
       <form id="sign-up">
         <input
-        placeholder="email"
-        type="text"
-        name="credientals[email]"
-         />
+        placeholder="Email"
+        name="credentials[email]"
+        type="text">
         <input
         placeholder="password"
-        type="password"
-        name="credientals[password]"
-         />
+        name="credentials[password]"
+        type="password">
         <input
         placeholder="confirm password"
-        type="password"
-        name="credientals[password]"
-         />
+        name="credentials[password_confirmation]"
+        type="password"  />
          <button type="submit">Sign Up</button>
       </form>
-    </body>
-</html>
+      <form id="sign-in">
+        <input
+        placeholder="Email"
+        name="credentials[email]"
+        type="text" />
+        <input
+    placeholder="password"
+    name="credentials[password]"
+    type="password" />
+  <button type="submit">Sign In</button>
+  </form>
+  </div>
+    <div class="authenticated">
+
+      <form id="change-password">
+        <input
+    placeholder="old password"
+    name="passwords[old]"
+    type="password"/>
+    <input
+    placeholder="new password"
+    name="passwords[new]"
+    type="password"/>
+    <button type="submit">New Password</button>
+    <br>
+    </form>
+    <form id="sign-out">
+    <button id="signout">Sign Out</button>
+  </form>
+    </div>
+    <div id="tictactoe-board" class="3x3">
+    <div class="row">
+    <div id="0" class="col-4 box"
+    cell-index="0"></div>
+    <div id="1" class="col-4 box"
+    cell-index="1"></div>
+    <div id="2" class="col-4 box"
+    cell-index="2"></div>
+    <div id="3" class="col-4 box"
+    cell-index="3"></div>
+    </div>
+    <div class="row">
+    <div id="4" class="col-4 box"
+    cell-index="4"></div>
+    <div id="5" class="col-4 box"
+    cell-index="5"></div>
+    <div id="6" class="col-4 box"
+    cell-index="6"></div>
+    </div>
+    <div class="row">
+    <div id="7" class="col-4 box"
+    cell-index="7"></div>
+    <div id="8" class="col-4 box"
+    cell-index="8"></div>
+    <div id="9" class="col-4 box"
+    cell-index="9"></div>
+    </div>
+    </div>
+
+    <form id="start-game" action="POST">
+    <button id="start-a-game">Play Here</button>
+
+    </form>
+
+
+        </body>
+    </html>
