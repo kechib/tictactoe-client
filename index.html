@@ -14,6 +14,7 @@
     <body>
       <h1>Welcome To Tic Tac Toe</h1>
       <p id="message"></p>
+
       <div class="unauthenticated">
       <form id="sign-up">
         <input
@@ -60,40 +61,32 @@
     <button id="signout">Sign Out</button>
   </form>
     </div>
-    <div id="tictactoe-board" class="3x3">
-    <div class="row">
-    <div id="0" class="col-4 box"
-    cell-index="0"></div>
-    <div id="1" class="col-4 box"
-    cell-index="1"></div>
-    <div id="2" class="col-4 box"
-    cell-index="2"></div>
-    <div id="3" class="col-4 box"
-    cell-index="3"></div>
+    <div class="authenticated">
+    <div class="container">
+      <h2 class="title">Kechi's Tic <span>Tac</span> Toe</h2>
     </div>
-    <div class="row">
-    <div id="4" class="col-4 box"
-    cell-index="4"></div>
-    <div id="5" class="col-4 box"
-    cell-index="5"></div>
-    <div id="6" class="col-4 box"
-    cell-index="6"></div>
-    </div>
-    <div class="row">
-    <div id="7" class="col-4 box"
-    cell-index="7"></div>
-    <div id="8" class="col-4 box"
-    cell-index="8"></div>
-    <div id="9" class="col-4 box"
-    cell-index="9"></div>
-    </div>
-    </div>
-
-    <form id="start-game" action="POST">
+  <div id="tictactoe-board" class="board-cells">
+  <div class="col-4" data-cell-index='0'></div>
+  <div class="col-4" data-cell-index='1'></div>
+  <div class="col-4" data-cell-index='2'></div>
+  <div class="col-4" data-cell-index='3'></div>
+  <div class="col-4" data-cell-index='4'></div>
+  <div class="col-4" data-cell-index='5'></div>
+  <div class="col-4" data-cell-index='6'></div>
+  <div class="col-4" data-cell-index='7'></div>
+  <div class="col-4" data-cell-index='8'></div>
+</div>
+<div class="authenticated">
+    <form id="start-game">
     <button id="start-a-game">Play Here</button>
 
     </form>
-
-
+    <form id="get-a-game">
+      <button id="get-game">Get A Game</button>
+</form>
+<form id="games-played">
+  <button id="numofgames">Number Of Games Played</button>
+</form>
+</div>
         </body>
     </html>
