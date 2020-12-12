@@ -18,7 +18,7 @@ const onSignIn = function (event) {
   api.signIn(data)
     .then(ui.onSignInSuccess)
     .catch(ui.onSignInFailure)
-}
+    }
 const onChangePassword = function (event) {
   event.preventDefault()
   const form = event.target

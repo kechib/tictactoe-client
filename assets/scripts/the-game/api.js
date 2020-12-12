@@ -6,9 +6,48 @@ const startGame = function () {
   return $.ajax({
     url: config.apiUrl + '/games',
     method: 'POST',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    },
+    data: {}
+  })
+}
+
+const getGame = function () {
+  return $.ajax({
+    url: config.apiUrl + '/games',
+    method: 'GET',
+  })
+}
+const numberOfGamesPlayed = function () {
+  return $.ajax({
+    url: config.apiUrl + '/games',
+    method: 'POST',
+  })
+}
+
+
+const onClickedBox = function (cellsIndex, userPlayer, isOver) {
+
+  return $.ajax({
+    url: config.apiUrl + '/games/' + store.game._id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    },
+    game: {
+      cell: {
+        index: cellsIndex,
+        value: userPlayer,
+      },
+      over: isOver
+    }
   })
 }
 
 module.exports = {
-
+startGame,
+getGame,
+numberOfGamesPlayed,
+onClickedBox
 }

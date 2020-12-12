@@ -1,1 +1,43 @@
 @import '~bootstrap/scss/bootstrap';
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+ }
+body {
+  display: flex;
+  justify-content: center;
+}
+#tictactoe-board
+{
+  cursor: pointer;
+	width: 1000px;
+	height: 1000px;
+	margin: 0 auto;
+  background-color: #1d1a1c;
+  color: white;
+  border: 20px solid #ff008f;
+  border-radius: 10px;
+
+	display: grid;
+	grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+}
+
+#tictactoe-board > div
+{
+  border: 20px solid #ff008f;
+  border-radius: 2px;
+  font-family: Helvetica;
+  font-weight: bold;
+  font-size: 4em;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.col-4 {
+  height: 280px;
+  margin-right: auto;
+
+  max-width: 50%;
+}
