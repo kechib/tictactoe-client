@@ -16,6 +16,7 @@ const onSignInSuccess = function (response) {
   store.user = response.user
   $('form').trigger('reset')
 $('.step3').show()
+$('.started').show()
 $('.board-cells').show()
 $('.step2').hide()
 $('.start').hide()
@@ -32,6 +33,7 @@ const onChangePasswordSuccess = function (response) {
   $('#message').text('Password Changed!')
   $('.step3').show()
   $('.board-cells').show()
+  $('.started').show()
 }
 const onChangePasswordFailure = function (error) {
   $('#message').text('Sign In Failed! Here is your error: ' + error.message)
@@ -43,7 +45,8 @@ const onSignOutSuccess = function () {
   $('#message').text('Signed out. Goodbye!')
   $('.step3').hide()
   $('.board-cells').hide()
-$('form').trigger('reset')
+  $('.started').hide()
+$('.game-details').hide()
   store.user = null
   $('form').trigger('reset')
 }

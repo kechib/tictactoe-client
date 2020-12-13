@@ -1,9 +1,11 @@
 const store = require('../store')
 
 const onStartGameSuccess = function (response) {
-  $('message').text('New Game Started!')
-  store.game = response.game
+$('message').text('New Game Started!')
 $('.game-details').show()
+store.game = response.game
+// console.log(response.game)
+store.userSymbol = 'x'
 }
 const onStartGameFailure = function (error) {
   $('message').text('New Game **Not** Started, Here is your error: ' + error.message)
@@ -11,7 +13,7 @@ const onStartGameFailure = function (error) {
 
 const onGetGameSuccess = function (response) {
   $('message').text('Here is your game!')
-  const game = response.game
+   store.game = response.game
   let gamesHTML = ''
   games.forEach(function (currentGame) {
     const currentGameHTML = (`
@@ -41,6 +43,7 @@ const onNumberOfGamesPlayedFailure = function (error) {
 const onClickedBoxSuccess = function (response) {
   $('message').text('Nice move!')
   store.game = response.game
+  console.log(response.game)
 }
 const onClickedBoxFailure = function (error) {
   $('message').text('Move not available, here is your error ' + error.message)

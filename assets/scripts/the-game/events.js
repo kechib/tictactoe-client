@@ -3,13 +3,17 @@ const ui = require('./ui')
 const store = require('./../store')
 const getFormFields = require('./../../../lib/get-form-fields')
 
-const playerX = 'X'
-const playerO = 'O'
+// const playerX = 'X'
+// const playerO = 'O'
+
 const onStartGame = function (event) {
+
   const startGame = event.target
+
   event.preventDefault()
+
   const data = getFormFields(startGame)
-api.startGame()
+api.startGame(data)
 .then(ui.onStartGameSuccess)
 .catch(ui.onStartGameFailure)
 }
@@ -23,28 +27,39 @@ const onTicTacToeBoardClick = function (event) {
   // const clickedBox = event.target.id
   const move = event.target
   const data = getFormFields(move)
-  let userPlayer
+  let userPlayer = store.userSymbol
+  // console.log(store.game)
+  // console.log(event)
+
+  const cellsIndex = $(move).data('cell-index')
   const clickedOnBox = store.game.cells
-const cellsIndex = $('move').data('cell-index')
 const positionOfGame = clickedOnBox[cellsIndex]
-  if ( positionOfGame === ' ')  {
+console.log(clickedOnBox)
+console.log(data)
+  if (positionOfGame === '')  {
       $(move).html(userPlayer)
       let isOver = false
       api.onClickedBox(cellsIndex, userPlayer, isOver)
       .then(ui.onClickedBoxSuccess)
       .catch(ui.onClickedBoxFailure)
 
-   if (userPlayer === playerX ){
 
-    $('message').text('Nice move! turn is now over')
-   userPlayer = playerO
-  }
-} else if (userPlayer === playerO) {
 
-  $('message').text('Nice move! turn is now over')
+  $(move).html(userPlayer)
+  if (userPlayer === 'x' ){
+
+    $('#message').text('Nice move! turn is now over')
+   store.userSymbol = 'o'
+
 }
+ else if (userPlayer === 'o') {
 
-else {
+  $('#message').text('Nice move! turn is now over')
+  store.userSymbol = 'x'
+
+}
+}
+ else {
     $('#message').text('Spot is taken, please try again')
 }
 
