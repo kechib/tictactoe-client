@@ -34,18 +34,17 @@ const onTicTacToeBoardClick = function (event) {
   const cellsIndex = $(move).data('cell-index')
   const clickedOnBox = store.game.cells
 const positionOfGame = clickedOnBox[cellsIndex]
-console.log(clickedOnBox)
-console.log(data)
+ console.log(clickedOnBox)
+// console.log(data)
   if (positionOfGame === '')  {
+    clickedOnBox[cellsIndex] = userPlayer
       $(move).html(userPlayer)
       let isOver = false
-      api.onClickedBox(cellsIndex, userPlayer, isOver)
-      .then(ui.onClickedBoxSuccess)
-      .catch(ui.onClickedBoxFailure)
 
 
 
-  $(move).html(userPlayer)
+
+  // $(move).html(userPlayer)
   if (userPlayer === 'x' ){
 
     $('#message').text('Nice move! turn is now over')
@@ -58,45 +57,51 @@ console.log(data)
   store.userSymbol = 'x'
 
 }
+api.onClickedBox(cellsIndex, userPlayer, isGameOver())
+.then(ui.onClickedBoxSuccess)
+.catch(ui.onClickedBoxFailure)
 }
  else {
     $('#message').text('Spot is taken, please try again')
-}
-
-
-// if (store.game.cellsIndex[0] === userPlayer) &&
-//  (store.game.cellsIndex[1] === userPlayer) &&
-//  (store.game.cellsIndex[2] === userPlayer) {
-//    isOver = true
-//  }
-// if (store.game.cellsIndex[0] === userPlayer) &&
-//  (store.game.cellsIndex[3] === userPlayer) &&
-//  (store.game.cellsIndex[6] === userPlayer) {
-//    isOver = true
-//  }
-// if (store.game.cellsIndex[0] === userPlayer) &&
-//  (store.game.cellsIndex[4] === userPlayer) &&
-//  (store.game.cellsIndex[8] === userPlayer) {
-//    isOver = true
-//  }
-// if (store.game.cellsIndex[2] === userPlayer) &&
-//  (store.game.cellsIndex[5] === userPlayer) &&
-//  (store.game.cellsIndex[8] === userPlayer) {
-//    isOver = true
-//  }
-// if (store.game.cellsIndex[1] === userPlayer) &&
-//  (store.game.cellsIndex[4] === userPlayer) &&
-//  (store.game.cellsIndex[7] === userPlayer) {
-//    isOver = true
-//  }
-// if (store.game.cellsIndex[2] === userPlayer) &&
-//  (store.game.cellsIndex[4] === userPlayer) &&
-//  (store.game.cellsIndex[6] === userPlayer) {
-//    isOver = true
-//  }
 
 
 }
+
+}
+const isGameOver = function () {
+let isOver = false
+const gameCells = store.game.cells
+
+
+    if (gameCells[0] === gameCells[1] && gameCells[0] === gameCells[2] && gameCells[0] !== '') {
+      isOver = true
+
+    } else if (gameCells[3] === gameCells[4] && gameCells[3] === gameCells[5] && gameCells[3] !== '') {
+      isOver = true
+
+    } else if (gameCells[6] === gameCells[7] && gameCells[6] === gameCells[8] && gameCells[6] !== '') {
+      isOver = true
+
+    } else if (gameCells[0] === gameCells[3] && gameCells[0] === gameCells[6] && gameCells[0] !== '') {
+      isOver = true
+
+    } else if (gameCells[1] === gameCells[4] && gameCells[1] === gameCells[7] && gameCells[1] !== '') {
+      isOver = true
+
+    } else if (gameCells[2] === gameCells[5] && gameCells[2] === gameCells[8] && gameCells[2] !== '') {
+      isOver = true
+
+    } else if (gameCells[0] === gameCells[4] && gameCells[0] === gameCells[8] && gameCells[0] !== '') {
+      isOver = true
+
+    } else if (gameCells[2] === gameCells[4] && gameCells[2] === gameCells[6] && gameCells[2] !== '') {
+      isOver = true
+
+    } if (isOver === true) {
+      $('#tictactoe-board div').off('click')
+    }
+    return isOver
+  }
 
 const onGetAGame = function (event) {
   const game = event.target.id

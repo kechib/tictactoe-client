@@ -8,17 +8,18 @@ store.game = response.game
 store.userSymbol = 'x'
 }
 const onStartGameFailure = function (error) {
-  $('message').text('New Game **Not** Started, Here is your error: ' + error.message)
+  $('#message').text('New Game **Not** Started, Here is your error: ' + error.message)
 }
 
 const onGetGameSuccess = function (response) {
-  $('message').text('Here is your game!')
-   store.game = response.game
+  $('#message').text('Here is your game!')
+   store.games = response.games
+   console.log(response.game)
   let gamesHTML = ''
-  games.forEach(function (currentGame) {
+  store.games.forEach(function (currentGame) {
     const currentGameHTML = (`
           <div>
-            <h4>Email: ${currentGame.email}</h4>
+            <h4>Owner: ${currentGame.owner}</h4>
             <p>CreatedOn: ${currentGame.createdAt}</p>
             <p>ID: ${currentGame._id}</p>
           </div>
@@ -43,6 +44,9 @@ const onNumberOfGamesPlayedFailure = function (error) {
 const onClickedBoxSuccess = function (response) {
   $('message').text('Nice move!')
   store.game = response.game
+  if (store.game.over === true) {
+    $('#message').text('You are the winner mon!')
+  }
   console.log(response.game)
 }
 const onClickedBoxFailure = function (error) {
@@ -58,4 +62,5 @@ module.exports = {
   onNumberOfGamesPlayedFailure,
   onClickedBoxSuccess,
   onClickedBoxFailure
+
 }
