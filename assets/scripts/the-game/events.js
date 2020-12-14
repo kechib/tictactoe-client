@@ -24,7 +24,6 @@ const onTicTacToeBoardClick = function (event) {
   // const userPlayer2 = playerY
 
   // event.target is the click
-  // const clickedBox = event.target.id
   const move = event.target
   const data = getFormFields(move)
   let userPlayer = store.userSymbol
@@ -99,7 +98,7 @@ const gameCells = store.game.cells
       isOver = true
 
     }
-    // else {
+    // else { gameCells[0] !== ''
     //   $('#message').text('Only losers here, we have a tie!')
     //
     // }
@@ -108,12 +107,7 @@ const gameCells = store.game.cells
       $('#tictactoe-board div').off('click')
 
       return isOver
-      // cells = ["", "", "", "", "", "", "", "", ""]
-      //   isOver = true
-      //   i = 0
-      //
-      //   // clear the board
-      //   $('#tictactoe-board').text('')
+
     }
   }
 

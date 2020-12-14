@@ -18,7 +18,7 @@ const onSignInSuccess = function (response) {
 $('.step3').show()
 $('.started').show()
 $('.board-cells').show()
-$('.step2').hide()
+$('.step2').show()
 $('.start').hide()
 
 }

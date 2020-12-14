@@ -43,14 +43,23 @@ span.h1 {
   font-size: 50px;
   text-align: left;
   margin-top: 270px;
+  margin-right: 150px;
 }
-
+.step3 {
+  margin-top: 100px;
+}
+.started {
+  margin-right: 500px;
+  height: 200px;
+  width: 200px;
+}
 #tictactoe-board
 {
   cursor: pointer;
 	width: 1000px;
 	height: 1000px;
-	margin: 0 auto;
+  margin-top: 150px;
+  margin-left: 150px;
   background-color: #1d1a1c;
   color: white;
   border: 20px solid #ff008f;

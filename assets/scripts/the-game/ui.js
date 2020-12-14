@@ -1,8 +1,9 @@
 const store = require('../store')
 
 const onStartGameSuccess = function (response) {
-$('message').text('New Game Started!')
+$('#message').text('New Game Started!')
 $('.game-details').show()
+
 store.game = response.game
 // console.log(response.game)
 store.userSymbol = 'x'
