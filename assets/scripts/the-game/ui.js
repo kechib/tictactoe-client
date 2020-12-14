@@ -26,7 +26,7 @@ const onGetGameSuccess = function (response) {
         `)
     gamesHTML += currentGameHTML
   })
-  $('#game-display').html(gamesHTML)
+  $('#game-display').text(gamesHTML)
 }
 
 const onGetGameFailure = function (error) {
@@ -46,6 +46,7 @@ const onClickedBoxSuccess = function (response) {
   store.game = response.game
   if (store.game.over === true) {
     $('#message').text('You are the winner mon!')
+    $('form').trigger('reset')
   }
   console.log(response.game)
 }

@@ -35,6 +35,7 @@ const onTicTacToeBoardClick = function (event) {
   const clickedOnBox = store.game.cells
 const positionOfGame = clickedOnBox[cellsIndex]
  console.log(clickedOnBox)
+ console.log(store.cells)
 // console.log(data)
   if (positionOfGame === '')  {
     clickedOnBox[cellsIndex] = userPlayer
@@ -97,10 +98,23 @@ const gameCells = store.game.cells
     } else if (gameCells[2] === gameCells[4] && gameCells[2] === gameCells[6] && gameCells[2] !== '') {
       isOver = true
 
-    } if (isOver === true) {
-      $('#tictactoe-board div').off('click')
     }
-    return isOver
+    // else {
+    //   $('#message').text('Only losers here, we have a tie!')
+    //
+    // }
+
+    if (isOver === true) {
+      $('#tictactoe-board div').off('click')
+
+      return isOver
+      // cells = ["", "", "", "", "", "", "", "", ""]
+      //   isOver = true
+      //   i = 0
+      //
+      //   // clear the board
+      //   $('#tictactoe-board').text('')
+    }
   }
 
 const onGetAGame = function (event) {
