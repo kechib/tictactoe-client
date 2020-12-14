@@ -14,7 +14,7 @@ const onStartGameFailure = function (error) {
 const onGetGameSuccess = function (response) {
   $('#message').text('Here is your game!')
    store.games = response.games
-   console.log(response.game)
+   console.log(response.games)
   let gamesHTML = ''
   store.games.forEach(function (currentGame) {
     const currentGameHTML = (`

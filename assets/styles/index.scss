@@ -1,4 +1,5 @@
 @import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 *{
   box-sizing: border-box;
   margin: 0;
@@ -7,7 +8,42 @@
 body {
   display: flex;
   justify-content: center;
+  background-image: url('https://thumbs.dreamstime.com/b/pink-glitter-sparkle-black-background-place-your-text-151021570.jpg');
 }
+h1 {
+  color: white;
+  text-align: center;
+  font-size: 90px;
+  font-family: 'Pacifico', cursive;
+}
+span.h1 {
+  color: #ff008f;
+  font-size: 90px;
+  font-family: 'Pacifico', cursive;
+}
+.start {
+  margin-top: 70px;
+}
+
+.form-control {
+  width: 250%;
+   padding: 12px 20px;
+   margin: 8px 0;
+   box-sizing: border-box;
+}
+.btn.btn-primary.btn-lg {
+  color: #ff008f;
+  font-weight: bold;
+  background-color: #1d1a1c;
+  border-color: #ff008f;
+}
+
+#message {
+  color: white;
+  font-size: 50px;
+  text-align: left;
+}
+
 #tictactoe-board
 {
   cursor: pointer;

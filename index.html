@@ -12,61 +12,60 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Welcome To Tic Tac Toe</h1>
+      <h1>Welcome To <span class="h1">Kechi's Tic Tac Toe</span></h1>
       <p id="message"></p>
 
 <div class="start">
       <form id="sign-up">
-        <input
+        <input class="form-control"
         placeholder="Email"
         name="credentials[email]"
         type="text">
-        <input
+        <input class="form-control"
         placeholder="password"
         name="credentials[password]"
         type="password">
-        <input
+        <input class="form-control"
         placeholder="confirm password"
         name="credentials[password_confirmation]"
         type="password"  />
-         <button type="submit">Sign Up</button>
+         <button type="submit" class="btn btn-primary btn-lg">Sign Up</button>
       </form>
-    </div>
+
       <form id="sign-in">
-        <input
+        <input class="form-control"
         placeholder="Email"
         name="credentials[email]"
         type="text" />
-        <input
+        <input class="form-control"
     placeholder="password"
     name="credentials[password]"
     type="password" />
-  <button type="submit">Sign In</button>
+  <button type="submit" class="btn btn-primary btn-lg">Sign In</button>
   </form>
   </div>
 
 <div class="step2">
       <form id="change-password">
-        <input
+        <input class="form-control"
     placeholder="old password"
     name="passwords[old]"
     type="password"/>
-    <input
+    <input class="form-control"
     placeholder="new password"
     name="passwords[new]"
     type="password"/>
-    <button type="submit">New Password</button>
+    <button type="submit" class="btn btn-primary btn-lg">New Password</button>
     <br>
     </form>
   </div>
   <div class="step3"
     <form id="sign-out">
-    <button id="signout">Sign Out</button>
+    <button id="signout" class="btn btn-primary btn-lg">Sign Out</button>
   </form>
 </div>
 
 <div class="container">
-<h2 class="title">Kechi's Tic <span>Tac</span> Toe</h2>
 </div>
 
 <div id="tictactoe-board" class="board-cells">
@@ -82,14 +81,16 @@
 </div>
 <div class="started">
 <form id="start-game">
-<button id="start-a-game">Play Here</button>
+<button id="start-a-game" class="btn btn-primary btn-lg">Play Here</button>
 </form>
+<div id="#game-display"></div>
     <div class="game-details">
     <form id="get-a-game">
-      <button id="get-game">Get A Game</button>
+      <button type="submit" class="btn btn-primary btn-lg">Get A Game</button>
 </form>
+
 <form id="games-played">
-  <button id="numofgames">Number Of Games Played</button>
+  <button type="submit" class="btn btn-primary btn-lg">Number Of Games Played</button>
 </form>
 </div>
 
