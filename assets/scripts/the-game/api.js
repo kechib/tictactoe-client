@@ -13,19 +13,22 @@ const startGame = function (data) {
   })
 }
 
-const getGame = function () {
+// const getGame = function () {
+//   return $.ajax({
+//     url: config.apiUrl + '/games',
+//     method: 'GET',
+//     headers: {
+//       Authorization: `Bearer ${store.user.token}`
+//      }
+//   })
+// }
+const numberOfGamesPlayed = function () {
   return $.ajax({
     url: config.apiUrl + '/games',
     method: 'GET',
     headers: {
-      Authorization: `Bearer ${store.user.token}`
-     }
-  })
-}
-const numberOfGamesPlayed = function () {
-  return $.ajax({
-    url: config.apiUrl + '/games',
-    method: 'POST',
+      Authorization: `Bearer  + ${store.user.token}`
+    }
   })
 }
 
@@ -52,7 +55,7 @@ console.log(store)
 
 module.exports = {
 startGame,
-getGame,
+// getGame,
 numberOfGamesPlayed,
 onClickedBox
 }

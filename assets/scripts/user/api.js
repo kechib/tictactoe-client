@@ -8,17 +8,17 @@ const signUp = function (formData) {
     data: formData
   })
 }
-const signIn = function (formData) {
+const signIn = function (data) {
   return $.ajax({
     url: config.apiUrl + '/sign-in',
     method: 'POST',
-    data: formData
+    data: data
   })
 }
 
 const changePassword = function (formData) {
-  console.log(store.user.token)
-  console.log(formData)
+  // console.log(store.user.token)
+  // console.log(formData)
   return $.ajax({
     url: config.apiUrl + '/change-password',
     method: 'PATCH',

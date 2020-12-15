@@ -8,6 +8,7 @@ const getFormFields = require('./../../../lib/get-form-fields')
 
 const onStartGame = function (event) {
 
+
   const startGame = event.target
 
   event.preventDefault()
@@ -33,8 +34,8 @@ const onTicTacToeBoardClick = function (event) {
   const cellsIndex = $(move).data('cell-index')
   const clickedOnBox = store.game.cells
 const positionOfGame = clickedOnBox[cellsIndex]
- console.log(clickedOnBox)
- console.log(store.cells)
+ // console.log(clickedOnBox)
+ // console.log(store.game.cells)
 // console.log(data)
   if (positionOfGame === '')  {
     clickedOnBox[cellsIndex] = userPlayer
@@ -47,13 +48,13 @@ const positionOfGame = clickedOnBox[cellsIndex]
   // $(move).html(userPlayer)
   if (userPlayer === 'x' ){
 
-    $('#message').text('Nice move! turn is now over')
+    $('#message').text('Nice move! ' + userPlayer + ' turn is now over')
    store.userSymbol = 'o'
 
 }
  else if (userPlayer === 'o') {
 
-  $('#message').text('Nice move! turn is now over')
+  $('#message').text('Nice move! ' + userPlayer + ' turn is now over')
   store.userSymbol = 'x'
 
 }
@@ -98,30 +99,34 @@ const gameCells = store.game.cells
       isOver = true
 
     }
-    // else { gameCells[0] !== ''
-    //   $('#message').text('Only losers here, we have a tie!')
-    //
-    // }
+   else if (store.game.cells[0] !== '' && store.game.cells[1] !== '' && store.game.cells[2] !== '' && store.game.cells[3] !== '' && store.game.cells[4] !== '' && store.game.cells[5] !== '' && store.game.cells[6] !== '' && store.game.cells[7] !== '' && store.game.cells[8] !== '') {
+       $('#message').text('Only losers here, we have a tie!')
+
+     }
 
     if (isOver === true) {
       $('#tictactoe-board div').off('click')
 
       return isOver
-
-    }
+}
   }
 
-const onGetAGame = function (event) {
-  const game = event.target.id
-  event.preventDefault()
-  const data = getFormFields(game)
-api.getGame()
-.then(ui.onGetGameSuccess)
-.catch(ui.onGetGameFailure)
-}
+// const onGetAGame = function (event) {
+//   const game = event.target.id
+//   event.preventDefault()
+//   const data = getFormFields(game)
+// api.getGame()
+// .then(ui.onGetGameSuccess)
+// .catch(ui.onGetGameFailure)
+// }
+
+
+
+
 
 const onNumberOfGamesPlayed = function (event) {
-  const numOfGame = event.target.id
+
+  const numOfGame = event.target
   event.preventDefault()
 api.numberOfGamesPlayed()
 .then(ui.onNumberOfGamesPlayedSuccess)
@@ -138,7 +143,7 @@ api.numberOfGamesPlayed()
 module.exports = {
 onTicTacToeBoardClick,
 onStartGame,
-onGetAGame,
-onNumberOfGamesPlayed,
+// onGetAGame,
+onNumberOfGamesPlayed
 
 }

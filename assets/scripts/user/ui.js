@@ -1,20 +1,20 @@
 const store = require('./../store')
 
 const onSignUpSuccess = function (response) {
+  $('form').trigger('reset')
   $('#message').text('Sign Up Successful!')
-$('form').trigger('reset')
-
 }
 
 const onSignUpFailure = function (error) {
+  $('form').trigger('reset')
   $('#message').text('Sign Up Failed! Here is your error: ' + error.message)
-$('form').trigger('reset')
 }
 
 const onSignInSuccess = function (response) {
-  $('#message').text('Sign In Successful!')
-  store.user = response.user
+
   $('form').trigger('reset')
+  store.user = response.user
+  $('#message').text('Sign In Successful! Hello '+ response.user.email + ' !')
 $('.step3').show()
 $('.started').show()
 $('.board-cells').show()
@@ -44,8 +44,9 @@ const onChangePasswordFailure = function (error) {
 const onSignOutSuccess = function () {
   $('#message').text('Signed out. Goodbye!')
   $('.step3').hide()
+  $('.step2').hide()
   $('.board-cells').hide()
-  $('.started').hide()
+  $('.started').show()
 $('.game-details').hide()
   store.user = null
   $('form').trigger('reset')
