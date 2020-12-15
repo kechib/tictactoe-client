@@ -126,7 +126,7 @@ const gameCells = store.game.cells
 
 const onNumberOfGamesPlayed = function (event) {
 
-  const numOfGame = event.target
+  const numOfGame = event.target._id
   event.preventDefault()
 api.numberOfGamesPlayed()
 .then(ui.onNumberOfGamesPlayedSuccess)

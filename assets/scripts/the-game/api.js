@@ -27,7 +27,7 @@ const numberOfGamesPlayed = function () {
     url: config.apiUrl + '/games',
     method: 'GET',
     headers: {
-      Authorization: `Bearer  + ${store.user.token}`
+      Authorization: `Bearer ${store.user.token}`
     }
   })
 }

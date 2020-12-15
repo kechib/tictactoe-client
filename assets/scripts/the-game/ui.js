@@ -3,11 +3,13 @@ const store = require('../store')
 const onStartGameSuccess = function (response) {
 $('#message').text('New Game Started!')
 $('.game-details').show()
-$('#tictactoe-board div').text('')
+
 store.game = response.game
 
 // console.log(response.game)
 store.userSymbol = 'x'
+$('#tictactoe-board div').text('')
+store.game.over = false
 }
 const onStartGameFailure = function (error) {
   $('#message').text('New Game **Not** Started, Here is your error: ' + error.message)
@@ -42,7 +44,7 @@ const onClickedBoxSuccess = function (response) {
   console.log(store)
   if (store.game.over === true) {
     $('#message').text('You are the winner mon!')
-    $('#tictactoe-board').trigger('reset')
+    $('form').trigger('reset')
   }
   // console.log(response.game)
 }

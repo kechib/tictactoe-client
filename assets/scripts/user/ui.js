@@ -46,8 +46,9 @@ const onSignOutSuccess = function () {
   $('.step3').hide()
   $('.step2').hide()
   $('.board-cells').hide()
-  $('.started').show()
+  $('.started').hide()
 $('.game-details').hide()
+$('.start').show()
   store.user = null
   $('form').trigger('reset')
 }
