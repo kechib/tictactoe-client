@@ -45,6 +45,8 @@ const onClickedBoxSuccess = function (response) {
   if (store.game.over === true) {
     $('#message').text('You are the winner mon!')
     $('form').trigger('reset')
+    // $('#tictactoe-board div').text('')
+
   }
   // console.log(response.game)
 }
@@ -53,8 +55,8 @@ const onClickedBoxFailure = function (error) {
 }
 
 const onNumberOfGamesPlayedSuccess = function (response) {
-store.games = response.games
-$('#game-display').html(`<h2> ${store.games.length} : is how many games you played!' </h2>`)
+$('#message').text(` You have ${response.games.length} amount of games so far. I hope you keep playing!`)
+console.log(response)
 }
 
 const onNumberOfGamesPlayedFailure = function (error) {

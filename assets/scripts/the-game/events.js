@@ -70,7 +70,8 @@ api.onClickedBox(cellsIndex, userPlayer, isGameOver())
 
 }
 const isGameOver = function () {
-let isOver = false
+  store.game.over = false
+let isOver = store.game.over
 const gameCells = store.game.cells
 
 
@@ -101,13 +102,13 @@ const gameCells = store.game.cells
     }
    else if (store.game.cells[0] !== '' && store.game.cells[1] !== '' && store.game.cells[2] !== '' && store.game.cells[3] !== '' && store.game.cells[4] !== '' && store.game.cells[5] !== '' && store.game.cells[6] !== '' && store.game.cells[7] !== '' && store.game.cells[8] !== '') {
        $('#message').text('Only losers here, we have a tie!')
-
+       isOver = true
      }
 
     if (isOver === true) {
-      $('#tictactoe-board div').off('click')
-
+      // $('#tictactoe-board div').off('click')
       return isOver
+
 }
   }
 
@@ -125,10 +126,8 @@ const gameCells = store.game.cells
 
 
 const onNumberOfGamesPlayed = function (event) {
-
-  const numOfGame = event.target._id
-  event.preventDefault()
-api.numberOfGamesPlayed()
+event.preventDefault()
+  api.numberOfGamesPlayed()
 .then(ui.onNumberOfGamesPlayedSuccess)
 .catch(ui.onNumberOfGamesPlayedFailure)
 }

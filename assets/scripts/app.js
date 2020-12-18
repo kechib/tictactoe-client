@@ -23,6 +23,6 @@ $('.started').hide()
   $('#start-game').on('click', theGameEvents.onStartGame)
   $('#tictactoe-board div').on('click', theGameEvents.onTicTacToeBoardClick)
   // $('#get-a-game').on('click', theGameEvents.onGetAGame)
-  $('#games-played').on('click', theGameEvents.onNumberOfGamesPlayed)
+  $('#games-played').on('submit', theGameEvents.onNumberOfGamesPlayed)
 
 })

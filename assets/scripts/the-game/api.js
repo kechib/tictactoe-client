@@ -24,13 +24,14 @@ const startGame = function (data) {
 // }
 const numberOfGamesPlayed = function () {
   return $.ajax({
-    url: config.apiUrl + '/games',
     method: 'GET',
+    url: config.apiUrl + '/games',
     headers: {
-      Authorization: `Bearer ${store.user.token}`
+    Authorization: 'Bearer ' + store.user.token
     }
-  })
-}
+    })
+  }
+
 
 
 const onClickedBox = function (cellsIndex, userPlayer, isOver) {
