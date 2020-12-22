@@ -100,12 +100,13 @@ const gameCells = store.game.cells
       isOver = true
 
     }
-   else if (store.game.cells[0] !== '' && store.game.cells[1] !== '' && store.game.cells[2] !== '' && store.game.cells[3] !== '' && store.game.cells[4] !== '' && store.game.cells[5] !== '' && store.game.cells[6] !== '' && store.game.cells[7] !== '' && store.game.cells[8] !== '') {
+   else if (gameCells[0] !== '' && gameCells[1] !== '' && gameCells[2] !== '' && gameCells[3] !== '' && gameCells[4] !== '' && gameCells[5] !== '' && gameCells[6] !== '' && gameCells[7] !== '' && gameCells[8] !== '') {
        $('#message').text('Only losers here, we have a tie!')
-       isOver = true
+       isOver = false
      }
 
     if (isOver === true) {
+
       // $('#tictactoe-board div').off('click')
       return isOver
 

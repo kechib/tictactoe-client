@@ -43,7 +43,7 @@ const onClickedBoxSuccess = function (response) {
   store.game = response.game
   console.log(store)
   if (store.game.over === true) {
-    $('#message').text('You are the winner mon!')
+    $('#message').text( 'You won this thing!')
     $('form').trigger('reset')
     // $('#tictactoe-board div').text('')
 
