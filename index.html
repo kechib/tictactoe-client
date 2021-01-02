@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Kechi's Tic Tac Toe</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+      <h1>Welcome To <span class="h1">Kechi's Tic Tac Toe</span></h1>
+      <p id="message"></p>
+
+<div class="start">
+      <form id="sign-up">
+        <input class="form-control"
+        placeholder="Email"
+        name="credentials[email]"
+        type="text">
+        <input class="form-control"
+        placeholder="password"
+        name="credentials[password]"
+        type="password">
+        <input class="form-control"
+        placeholder="confirm password"
+        name="credentials[password_confirmation]"
+        type="password"  />
+         <button type="submit" class="btn btn-primary btn-lg">Sign Up</button>
+      </form>
+
+      <form id="sign-in">
+        <input class="form-control"
+        placeholder="Email"
+        name="credentials[email]"
+        type="text" />
+        <input class="form-control"
+    placeholder="password"
+    name="credentials[password]"
+    type="password" />
+  <button type="submit" class="btn btn-primary btn-lg">Sign In</button>
+  </form>
+  </div>
+
+<div class="step2">
+      <form id="change-password">
+        <input class="form-control"
+    placeholder="old password"
+    name="passwords[old]"
+    type="password"/>
+    <input class="form-control"
+    placeholder="new password"
+    name="passwords[new]"
+    type="password"/>
+    <button type="submit" class="btn btn-primary btn-lg">New Password</button>
+    </form>
+  </div>
+  <br>
+  <div class="step3"
+    <form id="sign-out">
+    <button id="signout" class="btn btn-primary btn-lg">Sign Out</button>
+  </form>
+</div>
+
+<div class="container">
+</div>
+
+<div id="tictactoe-board" class="board-cells">
+<div class="col-4" data-cell-index='0'></div>
+<div class="col-4" data-cell-index='1'></div>
+<div class="col-4" data-cell-index='2'></div>
+<div class="col-4" data-cell-index='3'></div>
+<div class="col-4" data-cell-index='4'></div>
+<div class="col-4" data-cell-index='5'></div>
+<div class="col-4" data-cell-index='6'></div>
+<div class="col-4" data-cell-index='7'></div>
+<div class="col-4" data-cell-index='8'></div>
+</div>
+<div class="started">
+<form id="start-game">
+<button id="start-a-game" type="reset" class="btn btn-primary btn-lg">Play Here</button>
+</form>
+<div id="#game-display">
+    <div class="game-details">
+    <!-- <form id="get-a-game">
+      <input class="form-control"
+      type="text"
+      name="game[id]"
+      placeholder="Put Your Game ID Here" />
+      <button type="submit" class="btn btn-primary btn-lg">Get A Game</button> -->
+<!-- </form> -->
+
+<form id="games-played">
+  <button type="submit" class="btn btn-primary btn-lg">Number Of Games Played</button>
+</form>
+</div>
+</div>
+
+</div>
+        </body>
+    </html>
